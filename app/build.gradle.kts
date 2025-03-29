@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.devtools.ksp)
     alias(libs.plugins.kotlin.android)
 }
 
@@ -60,6 +61,26 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.text.google.fonts)
+
+    // NavHost Dependency
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
+
+    // Room DB
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
+    // Hilt Dependency Injection
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+
+    //Logging
+    implementation(libs.timber)
+
+    //Encrypted Shared Prefs
+    implementation(libs.encrypted.shared.prefs)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
